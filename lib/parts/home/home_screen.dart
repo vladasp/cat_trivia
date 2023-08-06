@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: FactCard(
                 model: state.model,
                 margin: const EdgeInsets.fromLTRB(16, 56, 16, 86),
+                useTransitionAnimation: false,
               ),
             ),
             Positioned(

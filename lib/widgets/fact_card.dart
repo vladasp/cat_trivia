@@ -9,9 +9,15 @@ import 'package:cat_trivia/widgets/error_image.dart';
 import 'package:flutter/material.dart';
 
 class FactCard extends StatefulWidget {
-  const FactCard({required this.model, this.margin, super.key});
+  const FactCard({
+    required this.model,
+    this.margin,
+    super.key,
+    this.useTransitionAnimation = true,
+  });
   final FactUIModel? model;
   final EdgeInsets? margin;
+  final bool useTransitionAnimation;
 
   @override
   State<FactCard> createState() => _FactCardState();
@@ -25,6 +31,25 @@ class _FactCardState extends State<FactCard> {
 
   late double screenHeight;
   late double imageWidth;
+
+  Widget factImage(FactUIModel? model) {
+    return Container(
+      key: ValueKey(model?.id ?? ''),
+      height: imageWidth,
+      width: imageWidth,
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Image.file(
+        File(model?.imagePath ?? ''),
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return ErrorImage.normal();
+        },
+      ),
+    );
+  }
 
   @override
   void didChangeDependencies() {
@@ -52,25 +77,12 @@ class _FactCardState extends State<FactCard> {
         children: [
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 600),
-            child: Container(
-              key: ValueKey(widget.model?.id ?? ''),
-              height: imageWidth,
-              width: imageWidth,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Hero(
-                tag: widget.model?.imagePath ?? '',
-                child: Image.file(
-                  File(widget.model?.imagePath ?? ''),
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return ErrorImage.normal();
-                  },
-                ),
-              ),
-            ),
+            child: widget.useTransitionAnimation
+                ? Hero(
+                    tag: widget.model?.imagePath ?? '',
+                    child: factImage(widget.model),
+                  )
+                : factImage(widget.model),
           ),
           const SizedBox(height: 8),
           if (widget.model != null)
