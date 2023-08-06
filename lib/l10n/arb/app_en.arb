@@ -1,0 +1,18 @@
+{
+    "@@locale": "en",
+    "loading": "Next fact is loading...",
+    "created": "Created: {value}",
+    "@created": {
+        "placeholders": {
+            "value": {
+                "type": "String"
+            }
+        }
+    },
+    "anotherFact": "Another fact!",
+    "factHistory": "Fact history",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "attention": "Attention",
+    "clearHistory": "Are you sure you want to clear the fact history?"
+}

@@ -1,0 +1,18 @@
+{
+    "@@locale": "uk",
+    "loading": "Наступний факт завантажується...",
+    "created": "Створено: {value}",
+    "@created": {
+        "placeholders": {
+            "value": {
+                "type": "String"
+            }
+        }
+    },
+    "anotherFact": "Ще один факт!",
+    "factHistory": "Історія фактів",
+    "ok": "Ок",
+    "cancel": "Відміна",
+    "attention": "Увага",
+    "clearHistory": "Ви впевнені, що хочете очистити історію фактів?"
+}
