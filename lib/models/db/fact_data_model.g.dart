@@ -1,41 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'fact_model.dart';
+part of 'fact_data_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FactModelAdapter extends TypeAdapter<FactModel> {
+class FactDataModelAdapter extends TypeAdapter<FactDataModel> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
-  FactModel read(BinaryReader reader) {
+  FactDataModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return FactModel(
+    return FactDataModel(
       id: fields[0] as String,
-      text: fields[1] as String,
-      imagePath: fields[3] as String,
-      createdAt: fields[2] as FactDataModel,
+      createdAt: fields[1] as String,
     );
   }
 
   @override
-  void write(BinaryWriter writer, FactModel obj) {
+  void write(BinaryWriter writer, FactDataModel obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(2)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.text)
-      ..writeByte(2)
-      ..write(obj.createdAt)
-      ..writeByte(3)
-      ..write(obj.imagePath);
+      ..write(obj.createdAt);
   }
 
   @override
@@ -44,7 +38,7 @@ class FactModelAdapter extends TypeAdapter<FactModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FactModelAdapter &&
+      other is FactDataModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

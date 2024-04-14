@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:cat_trivia/models/db/fact_data_model.dart';
 import 'package:cat_trivia/models/db/fact_model.dart';
 import 'package:cat_trivia/parts/home/home_part.dart';
 import 'package:cat_trivia/services/rest/rest_client.dart';
@@ -31,6 +32,7 @@ void main() async {
 
   Hive
     ..init(dbDirectory.path)
+    ..registerAdapter(FactDataModelAdapter())
     ..registerAdapter(FactModelAdapter());
   await Hive.openBox<FactModel>(Constants.factsBox);
 

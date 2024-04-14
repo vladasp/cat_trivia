@@ -30,7 +30,10 @@ class _ButtonState extends State<Button> {
           ),
         ),
         onPressed: widget.onPressed,
-        child: Text(widget.title),
+        child: Text(
+          widget.title,
+          style: TextStyle(color: colors.accentColor),
+        ),
       ),
     );
   }

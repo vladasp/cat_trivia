@@ -17,12 +17,12 @@ dependencies:
     sdk: flutter
   flutter_native_splash: ^2.3.1
   get_it: ^7.6.0
-  go_router: ^10.0.0
-  google_fonts: ^5.1.0
+  go_router: ^13.2.4
+  google_fonts: ^6.2.0
   hive: ^2.2.3
   intl: any
   json_serializable: ^6.7.1
-  lottie: ^2.5.0
+  lottie: ^3.1.0
   path: ^1.8.3
   path_provider: ^2.0.15
   retrofit: ^4.0.1
@@ -30,10 +30,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.2
   flutter_launcher_icons: ^0.13.1
-  retrofit_generator: '>=5.0.0 <6.0.0'
-  build_runner: '>=2.3.0 <4.0.0' 
+  retrofit_generator: ^8.1.0
+  build_runner: ^2.4.6 
   hive_generator: ^2.0.0
 
 flutter_icons:

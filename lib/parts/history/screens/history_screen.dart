@@ -25,6 +25,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
       builder: (builder, state) => Scaffold(
         backgroundColor: colors.backgroundColor,
         appBar: AppBar(
+          iconTheme: IconThemeData(color: colors.accentColor),
           title: Text(l10n.factHistory, style: styles.headline),
           backgroundColor: colors.primaryColor,
           actions: [
@@ -39,7 +40,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   }
                 });
               },
-              icon: const Icon(Icons.delete),
+              icon: Icon(Icons.delete, color: colors.accentColor),
             ),
           ],
         ),

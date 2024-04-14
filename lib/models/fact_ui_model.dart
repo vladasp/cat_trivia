@@ -13,7 +13,7 @@ class FactUIModel extends Equatable {
     return FactUIModel(
       id: model.id,
       text: model.text,
-      createdAt: model.createdAt,
+      createdAt: model.createdAt.createdAt,
       imagePath: model.imagePath,
     );
   }

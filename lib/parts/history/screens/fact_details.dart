@@ -19,7 +19,10 @@ class _FactDetailsState extends State<FactDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: colors.backgroundColor,
-      appBar: AppBar(backgroundColor: colors.primaryColor),
+      appBar: AppBar(
+        backgroundColor: colors.primaryColor,
+        iconTheme: IconThemeData(color: colors.accentColor),
+      ),
       body: SingleChildScrollView(
         child: FactCard(
           model: widget.model,

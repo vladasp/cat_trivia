@@ -1,3 +1,4 @@
+import 'package:cat_trivia/models/db/fact_data_model.dart';
 import 'package:cat_trivia/services/rest/rest_client.dart';
 import 'package:hive/hive.dart';
 
@@ -17,7 +18,8 @@ class FactModel extends HiveObject {
       imagePath: imagePath,
       id: response.id ?? '',
       text: response.text ?? '',
-      createdAt: response.createdAt ?? '',
+      createdAt:
+          FactDataModel.fromResponse(imagePath: imagePath, response: response),
     );
   }
 
@@ -28,7 +30,7 @@ class FactModel extends HiveObject {
   final String text;
 
   @HiveField(2)
-  final String createdAt;
+  final FactDataModel createdAt;
 
   @HiveField(3)
   final String imagePath;
